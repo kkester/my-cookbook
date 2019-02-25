@@ -1,0 +1,51 @@
+resources:
+
+- name: hugo
+  type: github-release
+  source:
+    user: gohugoio
+    repository: hugo
+    access_token: {{github_api_token}}
+- name: cookbook-template-repo
+  type: git
+  source:
+    uri: {{git_repo_uri}}
+    branch: {{git_branch}}
+    private_key: {{github_private_key}}
+- name: pws-apptx
+  type: cf
+  source:
+      api: {{cf_api}}
+      organization: {{cf_org}}
+      space: {{cf_space}}
+      username: {{cf-username}}
+      password: {{cf-password}}
+      skip_cert_check: true
+
+jobs:
+- name: compile-site
+  plan:
+  - get: cookbook-template-repo
+    params:
+      submodules: all
+    trigger: true
+
+  - get: hugo
+    params:
+      globs:
+      - 'hugo_[0-9]*Linux-64bit.tar.gz'
+
+  - task: generate-auth
+    file: cookbook-template-repo/ci/tasks/htpasswd.yml
+    params:
+      SITE_USER: {{site_user}}
+      SITE_PASSWORD: {{site_password}}
+  
+  - task: compile-site
+    file: cookbook-template-repo/ci/tasks/hugo.yml
+
+  - put: pws-apptx
+    params:
+      manifest: compiled-site/manifest.yml
+      path: compiled-site
+      current_app_name: app-transformation-cookbook-template

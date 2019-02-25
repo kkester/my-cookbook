@@ -1,0 +1,94 @@
+.logo {
+  color: #00253E;
+}
+
+.autocomplete-scroller {
+  width: 450px !important;
+  overflow-y:auto;
+}
+
+/*
+ * Theme customization follows...
+ */
+
+#header {
+  background: #00253E;
+}
+
+#header-wrapper {
+  background: #00253E;       /*#ecefef;*/
+  border-bottom-color: #00253E;
+
+}
+
+/* background of menu */
+#sidebar {
+  background-color: #00253E;
+}
+
+/* background of menu (when clicked) */
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+  background-color: #00253E;
+}
+
+#sidebar ul li.active > div > a {
+  background: transparent;
+  color: #00b5a3 !important;
+  padding-left: 1rem;
+  padding-right: 0rem;
+}
+
+
+a {
+  color: #00b5a3;
+}
+
+a:hover {
+  color: #0066ab;
+}
+
+.fa fa-search {
+  color: #00b5a3;
+}
+
+/* color of visited checkmarks */
+#sidebar ul li.visited > a .read-icon {
+  color: #00b5a3;
+}
+
+.searchbox {
+    background: #fff;
+    border-color: #00253E;
+    margin-top: 0rem;
+}
+
+.searchbox input {
+    display: inline-block;
+    color: #00253E;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    padding: 0 25px 0 30px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.fa-search {
+  color: #00b5a3;
+}
+
+.fa-close {
+  color: #00b5a3;
+}
+
+.headline {
+    border-top: 1px dashed #00253E;
+    font-size:smaller;
+    font-weight: bold;
+    color: #00b5a3;
+}
+
+body strong {
+    font-family: "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+}
