@@ -3,5 +3,3 @@ applications:
 - name: my-apptx-cookbook
   memory: 64M
   buildpack: staticfile_buildpack
-  env:
-    FORCE_HTTPS: true
