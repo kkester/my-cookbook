@@ -1,6 +1,6 @@
 ---
 applications:
-- name: my-cookbook
+- name: my-apptx-cookbook
   memory: 64M
   buildpack: staticfile_buildpack
   env:
