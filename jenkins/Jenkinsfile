@@ -1,0 +1,13 @@
+node {
+    stage('Preparation') { // for display purposes
+        // Get some code from a GitHub repository
+        git('https://github.com/kkester/my-cookbook.git')
+    }
+    stage('Build') {
+        // Run the publish
+        sh('./publish')
+    }
+    stage("Deploy") {
+        sh('cf push')
+    }
+}

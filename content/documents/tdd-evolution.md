@@ -15,18 +15,19 @@ The table below shows a list of names of various types of testing that are commo
 Type  | Description | Frameworks
 ------------- | ------------- | -------------
 Manual  |  | None
-Exploratory | | None
+Exploratory | manually exploring the system in ways that haven't been considered as part of the scripted tests. | None
 Acceptance | | Varies
 End-to-End | |
-UI | | Selenium
-Functional | | Soap UI <br> Cucumber
-Smoke | | Varies
-Integration | Integration Tests verify the integration of your application with all the parts that live outside of your application. | Spring <br> REST Assured
+UI | | - Selenium <br> - Protractor
+Functional | | - Soap UI <br> - Cucumber
+Smoke | A non-exhaustive set of tests that aim at ensuring that the most important functions work. | Varies
+Chaos | A process of testing a distributed computing system to ensure that the system can withstand unexpected disruptions in function by deliberately disabling random components within that system. | [Chaos Monkey](https://github.com/Netflix/chaosmonkey)
+Integration | Integration Tests verify the integration of your application with all the parts that live outside of your application. | - Spring Boot Test <br> - REST Assured <br> - Cucumber
 Service | |
 Contract | Ensure that the implementations on the consumer and provider side conform to the defined contract. They serve as a good regression test suite and make sure that deviations from the contract will be noticed early. | Spring Contracts / WireMock
-Slice | Test slicing is about segmenting the Spring Application Context that is created for the scope of the test. | Spring <br> WireMock <br> REST Assured
-Component | Test that limits the scope of the exercised software to a portion of the system under test to exercise as much of the system as is reasonable. | Spring <br> WireMock <br> REST Assured
-Unit | Ensure that a certain unit (typically a class under test) of your codebase works as intended | Spring <br> Mockito / PowerMock <br> Spock
+Slice | Test slicing is about segmenting the Spring Application Context that is created for the scope of the test. | - Spring Boot Test <br> - WireMock <br> - REST Assured
+Component | Test that limits the scope of the exercised software to a portion of the system under test to exercise as much of the system as is reasonable. | - Spring Boot Test <br> - WireMock <br> - REST Assured
+Unit | Ensure that a certain unit (typically a class under test) of your codebase works as intended | - Spring Boot Test <br> - Mockito / PowerMock <br> - Spock
 
 ## Traditional Testing Approach
 

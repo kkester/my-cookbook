@@ -8,10 +8,12 @@ date = 2018-09-28T09:35:15-05:00
 
 ## Starting Up MySQL Locally
 
+- [MySQL Installation Instructions](https://gist.github.com/nrollr/3f57fc15ded7dddddcc4e82fe137b58e)
+- [SequelPro](https://sequelpro.com)
 
 ## Connecting to MySQL
 
-Launch the `Sequel Pro` Application 
+Launch the `Sequel Pro` Application
 
 ```
 spring.jpa.hibernate.ddl-auto=none

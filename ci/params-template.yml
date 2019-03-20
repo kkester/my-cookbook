@@ -3,9 +3,9 @@ site_password:
 cf_api:
 cf_org:
 cf_space:
-cf-username: 
-cf-password: 
-git_repo_uri:
-github_api_token: 
-git_branch:
+cf-username:
+cf-password:
+git_repo_uri: https://github.com/kkester/my-cookbook.git
+github_api_token:
+git_branch: master
 github_token: |
