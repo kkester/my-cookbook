@@ -12,6 +12,9 @@ date = 2018-09-28T09:36:23-05:00
 1. Point your web browser to [https://login.run.pcfone.io/passcode](https://login.run.pcfone.io/passcode)
 1. enter the Temporary Authentication Code
 
+ssh into an application
+`cf ssh {appname} -k`
+
 ## Working with Local PCF Dev
 
 1. cf dev start
@@ -19,3 +22,7 @@ date = 2018-09-28T09:36:23-05:00
     ![pcf dev start](/images/pcf-dev-start.png)
 1. cf logout
 1. cf dev stop
+
+
+
+[7695] PCF GPTM AppTx (T&M)

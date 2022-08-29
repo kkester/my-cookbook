@@ -105,3 +105,22 @@ public class AlbumJsonTest {
 
 }
 ```
+
+### Working with Inheritance
+
+- The `visible = true` ensures that the key property is included in the serialized/deserialized process.
+
+```java
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        visible = true,
+        property = "configurationItemType")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Dispenser.class, name = "dispenser"),
+        @JsonSubTypes.Type(value = AuxiliaryFuel.class, name = "auxiliaryFuel"),
+        @JsonSubTypes.Type(value = FuelOffload.class, name = "fuelOffload")
+})
+public class ConfigurationItem {
+   ...
+}
+```

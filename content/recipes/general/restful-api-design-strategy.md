@@ -6,7 +6,7 @@ title = "Restful Api Design Strategy"
 date = 2018-07-25T09:05:14-04:00
 +++
 
-This is a recipe that describes the strategy used to design a RESTful API.  The goal of this strategy is to enable the implementation of at least a level 2 API as defined by the [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).  This strategy defines the characteristics of the following aspects of the API.
+This is a recipe that describes the steps of a strategy that can be used to determine how to design a RESTful API.  The goal of this strategy is to enable the implementation of at least a level 2 API as defined by the [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).  This following is a list of steps that outline the strategy to define how to design a RESTful API.
 
 1. Media Types
 1. URI Design
@@ -198,15 +198,13 @@ A common approach is to adopt the [tolerant reader](https://martinfowler.com/bli
 
 The non-versioning strategy entails always making enhancements to an API in a backwards compatible fashion.  In the event that this cannot be done, then a temporary version of the API is created and a process is initiated that would upgrade all consuming application to the latest version.  Once the process is completed, the legacy version is then removed.
 
-Ideally an API could start without a versioning mechanism in place and one would not be implemented until the time one is actually needed.
-
 ### Versioning strategy
 
 There are number of common API versioning strategies that can found.  One of these is a strategy based on a custom header approach where the value is a date.  How the date is determined can be done a few ways.  
 
 One approach is to have the consuming application always provide it as part of every request.  Another approach is to have a gateway application (such as Spring Cloud Gateway) that captures the event of the first request and store the date with the associated principal.
 
-Regardless of how the header is determined, the version header approach works nicely since it allows for specific aspects of the API to be versioned rather than having to version the entire API.  It also plays well with gateway applications that perform orchestration since the gateway would not need to know anything about what versions exists for each origin service.  Lastly, this versioning strategy would need to be implemented until the time a versioning mechanism is needed.
+Regardless of how the header is determined, the version header approach works nicely since it allows for specific aspects of the API to be versioned rather than having to version the entire API.  It also plays well with gateway applications that perform orchestration since the gateway would not need to know anything about what versions exists for each origin service.  Lastly, this versioning strategy would not need to be implemented until the time a versioning mechanism is needed.
 
 Using a URL based versioning strategy is losing popularity and should be avoided. The following is a comment from Fielding reflects his view on this approach.
 
